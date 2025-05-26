@@ -27,12 +27,7 @@ ul { list-style: none; }
   height: 50px;
   object-fit: contain;
 }
-.wiev-img {
-  display: block;
-  width: 100vh;
-  height: 60vh;
-  object-fit: contain;
-}
+
 
 .main-nav ul { display: flex; gap: 30px; }
 .main-nav a { font-size: 14px; letter-spacing: 2px; transition: color 0.3s; }
@@ -54,7 +49,22 @@ ul { list-style: none; }
 @keyframes blink { from { opacity: 0; } to { opacity: 0.2; } }
 
 /* Hero Section */
-.hero { height: 100vh; background: radial-gradient(circle at center, #2a2a2a 0%, #141414 100%); display: flex; align-items: center; justify-content: center; text-align: center; }
+/* /bono/css/styles.css */
+
+.hero {
+  /* Set your photo as a full-page background */
+  background-image: url('../images/robo-5_26_25.png');
+  background-size: cover;       /* Fill entire area */
+  background-position: center;  /* Center the image */
+  background-repeat: no-repeat; /* Don’t tile */
+  
+  /* Keep existing layout */
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
 .hero-content h1 { font-size: 72px; letter-spacing: 8px; margin-bottom: 16px; text-transform: uppercase; }
 .hero-content p { font-size: 18px; max-width: 600px; margin: 0 auto; }
 
@@ -136,4 +146,25 @@ ul { list-style: none; }
   text-align: center;
   padding-top: 20px;
   border-top: 1px solid #333;
+}
+
+/* In /bono/css/styles.css */
+
+/* Ensure <main> is a positioning context */
+main {
+  position: relative;
+}
+
+/* Vertical brand text */
+.vertical-brand {
+  position: absolute;
+  right: 100px;      /* distance from right edge */
+  bottom: 500px;     /* distance from bottom edge */
+  writing-mode: vertical-rl;  /* vertical text, top-to-bottom */
+  text-orientation: upright;  /* keep letters upright */
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  color: #ccc;
+  opacity: 0.7;
+  pointer-events: none;       /* clicks pass through */
 }
